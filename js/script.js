@@ -50,7 +50,18 @@ alert("Si buscas formar parte de nuestro equipo, ingresa tus datos")
 let nombreYapellidoDoctor = prompt('Ingresa tú nombre y apellido');
 let edadDoctor = prompt('Ingresa tú edad');
 let diasDoctor = prompt('Ingresa tus días disponibles');
-
+listadoDoctores.push(nombreYapellidoDoctor);
+listadoDoctores.log(listadoDoctores);
 const DoctorUsuario = new Doctor(nombreYapellidoDoctor,edadDoctor,diasDoctor);
 
 console.log(DoctorUsuario)
+
+const listadoDoctores = ['Sebastian Lozano', 'Yao Ming', 'Dario Chaile', 'Ailin Farias', 'Lucia Frey', 'Amara'];
+const numeros = [1, 2, 3, 4, 5];
+
+console.log(listadoDoctores[0]);
+console.log(listadoDoctores[1]);
+console.log(listadoDoctores[2]);
+console.log(listadoDoctores[3]);
+console.log(listadoDoctores[4]);
+console.log(listadoDoctores[5]);
