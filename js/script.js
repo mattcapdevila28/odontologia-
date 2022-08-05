@@ -65,3 +65,5 @@ console.log(listadoDoctores[2]);
 console.log(listadoDoctores[3]);
 console.log(listadoDoctores[4]);
 console.log(listadoDoctores[5]);
+
+
