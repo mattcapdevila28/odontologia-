@@ -9,6 +9,7 @@ if (primerNodo.nodeType == 8){
 
 const btnRegistro = document.getElementById('registro');
 const pieDePagina = document.querySelector('.piesito');
+const btnGuardar = document.getElementById('gridCheck')
 let inputEmail4 = document.getElementById('inputEmail4');
 let inputPassword4 = document.getElementById('inputPassword4');
 let inputAddress = document.getElementById('inputAddress');
@@ -55,3 +56,13 @@ inputZip.addEventListener('keyup',()=>{
 
 btnRegistro.addEventListener('click',completarRegistro);
 pieDePagina.addEventListener('click',derechosReservados);
+
+btnGuardar.addEventListener('click',()=>{
+    if (btnGuardar.checked) {
+        guardarDatos('localStorage');
+    } else {
+        guardarDatos('sessionStorage');
+    }
+})
+
+console.log(localStorage.length);
