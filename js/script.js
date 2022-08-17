@@ -1,5 +1,27 @@
-let nombreUsuario = prompt("Ingresá tu correo para recibir información y promociones")
-alert("Bienvenido/a, gracias por confiar en nosotros!")
+const inputOptions = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        '#ff0000': 'Ingresar cupón',
+        '#00ff00': 'Trabaja con nosotros',
+        '#0000ff': 'Paciente'
+      })
+    }, 1000)
+  })
+  
+  const { value: opcion } = await Swal.fire({
+    title: '¡Bienvenido!',
+    input: 'radio',
+    inputOptions: inputOptions,
+    inputValidator: (value) => {
+      if (!value) {
+        return 'You need to choose something!'
+      }
+    }
+  })
+  
+  if (opcion) {
+    Swal.fire({ html: `You selected: ${opcion}` })
+  }
 
 let cupon = prompt('Si posee un cupón, ingreselo.');
 let cuponValido = 'UALICIDAD';
@@ -8,6 +30,7 @@ if (cupon == 'UALICIDAD' || cupon == 'Ualicidad' || cupon == 'ualicidad') {
 } else {
     alert('Cupón inválido.');
 } 
+
 let frase = 12;
 while (frase>0){console.log('Boquita el mas grande')
 frase--;
