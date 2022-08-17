@@ -19,13 +19,7 @@ let inputState = document.getElementById('inputState');
 let inputZip = document.getElementById('inputZip');
 
 function completarRegistro() {
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Registro exitoso!',
-        showConfirmButton: false,
-        timer: 3500
-      });
+    alert("Gracias por registrarte!");
 }
 
 function derechosReservados() {
