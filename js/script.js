@@ -1,33 +1,3 @@
-(async () => {
-
-    /* inputOptions can be an object or Promise */
-    const inputOptions = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          '#ff0000': 'Red',
-          '#00ff00': 'Green',
-          '#0000ff': 'Blue'
-        })
-      }, 1000)
-    })
-    
-    const { value: color } = await Swal.fire({
-      title: 'Select color',
-      input: 'radio',
-      inputOptions: inputOptions,
-      inputValidator: (value) => {
-        if (!value) {
-          return 'You need to choose something!'
-        }
-      }
-    })
-    
-    if (color) {
-      Swal.fire({ html: `You selected: ${color}` })
-    }
-    
-    })()
-
 let cupon = prompt('Si posee un cupón, ingreselo.');
 let cuponValido = 'UALICIDAD';
 if (cupon == 'UALICIDAD' || cupon == 'Ualicidad' || cupon == 'ualicidad') {
