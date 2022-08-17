@@ -24,7 +24,7 @@ function completarRegistro() {
         icon: 'success',
         title: 'Registro exitoso!',
         showConfirmButton: false,
-        timer: 1500
+        timer: 3500
       });
 }
 
