@@ -66,3 +66,14 @@ btnGuardar.addEventListener('click',()=>{
 })
 
 console.log(localStorage.length);
+
+async function verificacionEmail (inputEmail4) {
+let API =  ` https://www.disify.com/api/email/${inputEmail4}`;
+const resp = await fetch(API);
+const dataJson = await resp.json();
+console.log(dataJson);
+}
+
+btnRegistro.addEventListener('click',()=>{
+verificacionEmail(inputEmail4)
+});
