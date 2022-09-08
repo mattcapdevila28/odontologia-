@@ -42,7 +42,7 @@ function completarRegistro() {
         position: 'top-end',
         icon: 'success',
         title: 'Registro exitoso!',
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 15000
       });
 }
