@@ -41,9 +41,9 @@ function completarRegistro() {
     Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Registro exitoso!',
         showConfirmButton: false,
-        timer: 1500
+        timer: 15000
       });
 }
 btnRegistro.addEventListener('click',completarRegistro);
