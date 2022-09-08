@@ -6,11 +6,6 @@ if (cupon == 'UALICIDAD' || cupon == 'Ualicidad' || cupon == 'ualicidad') {
     alert('Cupón inválido.');
 } 
 
-let frase = 12;
-while (frase>0){console.log('Boquita el mas grande')
-frase--;
-}
-console.log("Y nadie lo puede negar");
 
 const doctor1 = {
     nombreYapellido: 'Doctor Sebastiano Lozano',

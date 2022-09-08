@@ -1,14 +1,4 @@
-let nodo = document.head;
-console.log(nodo.nodeType);
-let primerNodo = document.documentElement.firstChild;
-if (primerNodo.nodeType == 8){
-    console.log('El primer nodo es un comentario, y su nodeType es' + primerNodo.nodeType);
-} else {
-    console.log('No hay un comentario al principio');
-}
-
 const btnRegistro = document.getElementById('registro');
-const pieDePagina = document.querySelector('.piesito');
 const btnGuardar = document.getElementById('gridCheck')
 let inputEmail4 = document.getElementById('inputEmail4');
 let inputPassword4 = document.getElementById('inputPassword4');
@@ -18,13 +8,6 @@ let inputCity = document.getElementById('inputCity');
 let inputState = document.getElementById('inputState');
 let inputZip = document.getElementById('inputZip');
 
-function completarRegistro() {
-    alert("Gracias por registrarte!");
-}
-
-function derechosReservados() {
-    alert("Matias Capdevila");
-}
 
 inputEmail4.addEventListener('keyup',()=>{
     console.log(inputEmail4.value);
@@ -54,9 +37,30 @@ inputZip.addEventListener('keyup',()=>{
     console.log(inputZip.value);
 })
 
+function completarRegistro() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      });
+}
 btnRegistro.addEventListener('click',completarRegistro);
-pieDePagina.addEventListener('click',derechosReservados);
 
+function guardarDatos(storage) {   
+    const email = {
+        "inputEmail4": email,
+    }
+
+    if (storage === "localStorage") {
+        localStorage.setItem('inputEmail4', JSON.stringify(email));
+    }
+
+    if (storage === "sessionStorage") {
+        sessionStorage.setItem('inputEmail4', JSON.stringify(email));
+    }
+}
 btnGuardar.addEventListener('click',()=>{
     if (btnGuardar.checked) {
         guardarDatos('localStorage');
@@ -65,7 +69,6 @@ btnGuardar.addEventListener('click',()=>{
     }
 })
 
-console.log(localStorage.length);
 
 async function verificacionEmail (inputEmail4) {
 let API =  ` https://www.disify.com/api/email/${inputEmail4}`;
