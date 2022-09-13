@@ -71,12 +71,14 @@ btnGuardar.addEventListener('click',()=>{
 })
 
 // api
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
+async function verificacionEmail (inputEmail4) {
+let API =  ` https://www.disify.com/api/email/${inputEmail4}`;
+const resp = await fetch(API);
+const dataJson = await resp.json();
+console.log(dataJson);
+}
 
-  fetch("https://api.eva.pingutil.com/email?email=test@mail7.io", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+btnRegistro.addEventListener('click',()=>{
+e.preventDefault();
+verificacionEmail(inputEmail4)
+})
