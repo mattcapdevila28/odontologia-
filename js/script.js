@@ -1,12 +1,4 @@
-let cupon = prompt('Si posee un cupón, ingreselo.');
-let cuponValido = 'UALICIDAD';
-if (cupon == 'UALICIDAD' || cupon == 'Ualicidad' || cupon == 'ualicidad') {
-    alert('Cupón ingresado con exito!');
-} else {
-    alert('Cupón inválido.');
-} 
-
-
+// array de objetos
 const doctor1 = {
     nombreYapellido: 'Doctor Sebastiano Lozano',
     calle: 'avenida caseros 3547',

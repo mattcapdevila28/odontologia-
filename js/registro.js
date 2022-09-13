@@ -8,7 +8,7 @@ let inputCity = document.getElementById('inputCity');
 let inputState = document.getElementById('inputState');
 let inputZip = document.getElementById('inputZip');
 
-
+//form
 inputEmail4.addEventListener('keyup',()=>{
     console.log(inputEmail4.value);
 })
@@ -37,17 +37,18 @@ inputZip.addEventListener('keyup',()=>{
     console.log(inputZip.value);
 })
 
-function completarRegistro() {
+// alert de registro
+btnRegistro.onclick = () => {
     Swal.fire({
         position: 'top-end',
         icon: 'success',
         title: 'Registro exitoso!',
         showConfirmButton: true,
-        timer: 15000
+        timer: 3500
       });
 }
-btnRegistro.addEventListener('click',completarRegistro);
 
+// funcion de storage
 function guardarDatos(storage) {   
     const email = {
         "inputEmail4": email,
@@ -69,14 +70,13 @@ btnGuardar.addEventListener('click',()=>{
     }
 })
 
+// api
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
 
-async function verificacionEmail (inputEmail4) {
-let API =  ` https://www.disify.com/api/email/${inputEmail4}`;
-const resp = await fetch(API);
-const dataJson = await resp.json();
-console.log(dataJson);
-}
-
-btnRegistro.addEventListener('click',()=>{
-verificacionEmail(inputEmail4)
-});
+  fetch("https://api.eva.pingutil.com/email?email=test@mail7.io", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
