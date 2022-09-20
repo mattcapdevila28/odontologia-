@@ -14,12 +14,7 @@ btnRegistro.onclick = () => {
         title: 'Registro exitoso!',
         showConfirmButton: true,
         timer: 3500
-    },
-        function (isConfirm) {
-            if (isConfirm) {
-                return true;
-            }
-      });
+    });
 }
 
 // funcion de storage
