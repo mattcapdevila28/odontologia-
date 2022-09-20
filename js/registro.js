@@ -42,7 +42,7 @@ btnRegistro.addEventListener('click',()=>{
 
 // api
 async function verificacionEmail (inputEmail4) {
-let API =  `{inputEmail4}`;
+let API =  {inputEmail4};
 const resp = await fetch(API);
 const dataJson = await resp.json();
 console.log(dataJson);
