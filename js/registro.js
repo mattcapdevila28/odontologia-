@@ -7,7 +7,6 @@ let inputPassword4 = document.getElementById('inputPassword4');
     
 // alert de registro
 btnRegistro.onclick = () => {
-    e.preventDefault();
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -15,6 +14,8 @@ btnRegistro.onclick = () => {
         showConfirmButton: true,
         timer: 3500
     });
+    if (showConfirmButton) false
+    e.preventDefault();
 }
 
 // funcion de storage
